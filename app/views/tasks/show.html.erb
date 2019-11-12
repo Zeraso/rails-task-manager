@@ -1,0 +1,16 @@
+<div class="d-flex flex-column align-items-center">
+<h1><%= @task.title %>
+  <div class="btn btn-primary">
+    <%= link_to 'Edit', edit_path(@task) %>
+  </div></h1>
+<p><%= @task.details %></p>
+<p><% if @task.completed == true %>
+  <%= check_box("tag", tag.id, {checked: (@task.completed?)}) + " " + "This task is completed." %>
+    <% else %>
+  <%= check_box("tag", tag.id, {checked: (@task.completed?)}) + " " + "You've not completed this task yet." %>
+  <% end %>
+</p>
+<div class="btn btn-primary">
+<%= link_to 'Back', index_path %>
+</div>
+</div>
